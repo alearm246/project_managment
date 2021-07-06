@@ -1,0 +1,25 @@
+.signUpPageHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.signUpPopup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    height: 60vh;
+    background-color: #f0d89f;
+    border-radius: 3%;
+}
+
+.signUpForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.usernameInput {
+    width: 100%;
+}

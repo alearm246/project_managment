@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import style from "./Login.module.css";
+import style from "./SignUp.module.css";
 import axios from "axios";
 
 import { Link } from "react-router-dom";
 
-function Login() {
+function SignUp() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    const login = async () => {
+    const signup = async () => {
         try {
-            const res = await axios.post("http://localhost:3000/auth/login", {
+            const res = await axios.post("http://localhost:3000/auth/signup", {
                 username,
                 password
             }, {
@@ -24,13 +24,13 @@ function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        login();
+        signup()
     }
 
     return (
-        <div className={style.loginPageHolder}>
-            <div className={style.loginPopup}>
-                <form className={style.loginForm}>
+        <div className={style.signUpPageHolder}>
+            <div className={style.signUpPopup}>
+                <form className={style.signUpForm}>
                     <label>username</label>
                     <input 
                         type="text"
@@ -48,12 +48,12 @@ function Login() {
                         onChange={(e) => setPassword(e.target.value)}
                         className={style.passwordInput}
                     />
-                    <button onClick={handleSubmit}>login</button>
-                    <Link to="/signup">don't have an account? sign up!</Link>
+                    <button onClick={handleSubmit}>signup</button>
+                    <Link to="/">don't have an account? login up!</Link>
                 </form>
             </div>
         </div>
     )
 }
 
-export default Login;
+export default SignUp;
