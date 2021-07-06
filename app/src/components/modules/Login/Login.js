@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import style from "./Login.module.css";
 import axios from "axios";
 
-import { Link } from "react-router-dom";
+import { UserContext } from "../../../context/UserContext";
+import { Link, useHistory } from "react-router-dom";
 
 function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+
+    const history = useHistory();
 
     const login = async () => {
         try {
@@ -16,7 +19,7 @@ function Login() {
             }, {
                 withCredentials: true
             });
-            console.log(res);
+            if(res.status === 200) history.push("/user-profile");
         } catch(err) {
             console.error(err);
         }

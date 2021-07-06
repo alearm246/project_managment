@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import style from "./SignUp.module.css";
 import axios from "axios";
 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 function SignUp() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+
+    const history = useHistory();
 
     const signup = async () => {
         try {
@@ -16,7 +18,8 @@ function SignUp() {
             }, {
                 withCredentials: true
             });
-            console.log(res);
+
+            if(res.status === 201) history.push("/");
         } catch(err) {
             console.error(err);
         }
