@@ -1,0 +1,38 @@
+.profilePic {
+    border-radius: 50%;
+    width: 25%;
+    height: 65%;
+}
+
+.dropDownHolder {
+    position: absolute;
+    width: 10vw;
+    height: auto;
+    background: #1c2128;
+    z-index: 1;
+    left: -5;
+}
+
+.dropDownItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 5vh;
+    text-align: center;
+}
+
+.dropDownItem:hover {
+    color: black;
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+.dropDownItemLink {
+    color: white;
+    text-decoration: none;
+}
+
+.dropDownItemLink:hover {
+    color: black;
+}

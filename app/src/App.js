@@ -7,6 +7,8 @@ import {
 import Login from "./components/modules/Login/Login";
 import SignUp from "./components/modules/Signup/SignUp";
 import UserProfile from "./components/modules/UserProfile/UserProfile";
+import Header from "./components/common/Header/Header";
+import Footer from "./components/common/Footer/Footer";
 
 import { UserProvider } from "./context/UserContext";
 
@@ -16,6 +18,7 @@ function App() {
     <UserProvider>
       <Router>
         <div className="App">
+          <Header />
           <Switch>
             <Route exact path="/">
               <Login />
@@ -27,6 +30,7 @@ function App() {
               <UserProfile />
             </Route>
           </Switch>
+          <Footer />
         </div>
       </Router>
     </UserProvider>
