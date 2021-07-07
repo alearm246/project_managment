@@ -11,16 +11,22 @@ function UserProfile() {
         try {
             const res = await axios.get("http://localhost:3000/users/current", { withCredentials: true });
             const { id, username } = res.data;
+            console.log(username);
             setUser({
                 id,
                 username
             })
         } catch(err) {
             console.error(err);
+            setUser({
+                id: null,
+                username: ''
+            })
         }
     }
 
     useEffect(() => {
+        console.log("HEYYYYY");
         getCurrentUser();
     }, [])
 

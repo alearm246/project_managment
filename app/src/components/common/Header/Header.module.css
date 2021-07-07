@@ -1,0 +1,20 @@
+.headerHolder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    background-color: #f0d89f;
+}
+
+.logoHolder {
+    width: 20%;
+}
+
+.navLinksHolder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+}
